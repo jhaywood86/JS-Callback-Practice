@@ -2,7 +2,8 @@ const inventory = newInventory()
 move(inventory).to(0, 0)
 
 const character = newImage('assets/green-character/static.gif')
-move(character).to(100, 250)
+move(character).withArrowKeys(100, 250)
+
 
 let direction = null;
 let x = 100;
@@ -44,6 +45,11 @@ function moveCharacter(){
             direction = 'south'
         }
     })
+
+    document.addEventListener('keyup', function(e){
+        direction = null
+    })
+    
 
 
 move(newImage('assets/tree.png')).to(200, 450)
